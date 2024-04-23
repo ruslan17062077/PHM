@@ -29,11 +29,19 @@ namespace PHM.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (proddesc.Text.Length != 0)
+            if (!string.IsNullOrWhiteSpace(proddesc.Text))
             {
-                PHM.InfoProd.ClassDataInfoProd.SetData(name,proddesc.Text);
-                Task.Delay(3000);
-                App.window.frame.NavigationService.Navigate(new Info(name));
+                PHM.InfoProd.ClassDataInfoProd.GetData();
+                if(PHM.InfoProd.ClassDataInfoProd.ListStatic.Any(x => x.Name == proddesc.Text))
+                {
+                    MessageBox.Show("У этого продукта уже есть компонент с таким названием");
+                }
+                else
+                {
+                    PHM.InfoProd.ClassDataInfoProd.SetData(name, proddesc.Text);
+                    MessageBox.Show("Добавленно!");
+                    App.window.frame.NavigationService.Navigate(new Info(name));
+                }
             }
             else
             {

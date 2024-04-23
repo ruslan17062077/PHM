@@ -27,7 +27,21 @@ namespace PHM.Pages
 
         private void vhod_Click(object sender, RoutedEventArgs e)
         {
-            StaticApp.ClassData.SetData(names.Text, login.Text, password.Text);
+            if (string.IsNullOrWhiteSpace(nameTb.Text) || string.IsNullOrWhiteSpace(login.Text) || string.IsNullOrWhiteSpace(password.Text))
+            {
+                MessageBox.Show("Заполните все поля!");
+            }
+            else
+            {
+                StaticApp.ClassData.SetData(nameTb.Text, login.Text, password.Text);
+                MessageBox.Show("Вы успрешно зарегистрированы");
+                App.window.frame.Navigate(new Uri("Pages/Auth.xaml", UriKind.Relative));
+            }
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            App.window.frame.Navigate(new Uri("Pages/Auth.xaml", UriKind.Relative));
         }
     }
 }

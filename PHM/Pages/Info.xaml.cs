@@ -20,8 +20,8 @@ namespace PHM.Pages
     /// </summary>
     public partial class Info : Page
     {
-        private String name;
-        public Info(String _name)
+        private string name;
+        public Info(string _name)
         {
             name = _name;
             InitializeComponent();

@@ -10,7 +10,6 @@
 
     <Grid>
         <StackPanel>
-            <TextBox Name="prodTB"></TextBox>
             <Button Click="Button_Click_1" >назад</Button>
             <Button Click="Button_Click" >Добавить</Button>
             <DataGrid x:Name="prodInfoGrid" AutoGenerateColumns="False" >

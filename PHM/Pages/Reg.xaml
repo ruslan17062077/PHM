@@ -10,30 +10,26 @@
 
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
-
             <StackPanel Orientation="Horizontal">
                 <TextBlock>Наме:</TextBlock>
-                <TextBox x:Name="names" Width="100">
+                <TextBox x:Name="nameTb" Width="100">
                 </TextBox>
             </StackPanel>
-
             <StackPanel Orientation="Horizontal">
-                    <TextBlock>ЛОГИН:</TextBlock>
-                    <TextBox x:Name="login" Width="100">
-                    </TextBox>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock>Пароль:</TextBlock>
-                    <TextBox x:Name="password" Width="100">
-                    </TextBox>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Button Name="otmena" Click="vhod_Click" >отмена</Button>
-                    <Button Name="reg" Click="vhod_Click" >Зарегаться</Button>
-
-                </StackPanel>
+                <TextBlock>ЛОГИН:</TextBlock>
+                <TextBox x:Name="login" Width="100">
+                </TextBox>
             </StackPanel>
-    
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Пароль:</TextBlock>
+                <TextBox x:Name="password" Width="100">
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Name="Cancel" Click="Cancel_Click" >отмена</Button>
+                <Button Name="reg" Click="vhod_Click" >Зарегаться</Button>
+
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

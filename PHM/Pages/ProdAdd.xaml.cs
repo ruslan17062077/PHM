@@ -27,10 +27,19 @@ namespace PHM.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (prodname.Text.Length != 0)
+            if (!string.IsNullOrWhiteSpace(prodname.Text))
             {
-                PHM.Product.ClassDataProduct.SetData(prodname.Text);
-                App.window.frame.NavigationService.Navigate(new Product());
+                PHM.Product.ClassDataProduct.GetData();
+                if(PHM.Product.ClassDataProduct.ListStatic.Any(x => x.Name == prodname.Text))
+                {
+                    MessageBox.Show("Продукт с таким названием уже есть в базе");
+                }
+                else
+                {
+                    PHM.Product.ClassDataProduct.SetData(prodname.Text);
+                    MessageBox.Show("Добавленно!");
+                    App.window.frame.NavigationService.Navigate(new Product());
+                }       
             }
             else
             {
